@@ -1,0 +1,21 @@
+<template>
+    <lightning-input type="checkbox" label="Show Div" onchange={showDivHandler}>
+
+    </lightning-input>
+
+    <template if:true={displayDiv}>
+        <div>Conditional Rendering</div>
+    </template>
+    <h1> City </h1>
+    <template for:each={cityList} for:item = "city">
+        <p key={city}>{city}</p>
+    </template>
+
+    <h1> Iterator example</h1>
+    <template iterator:it={cityList}>
+        <p key = {it.value}>{it.value}</p>
+        <p key = {it.value}> {it.first}</p>
+        <p key = {it.value}> {it.last}</p>
+    </template>
+    
+</template>
