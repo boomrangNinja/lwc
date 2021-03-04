@@ -2,6 +2,9 @@ import { LightningElement, track} from 'lwc';
 
 export default class SimpleCalc extends LightningElement {
     @track currentResult;
+    @track previousResult=[];
+    @track showPrevResults = false;
+
     firstNumber;
     secondNumber;
 
@@ -36,7 +39,14 @@ export default class SimpleCalc extends LightningElement {
             this.currentResult = `Result of ${parseInt(this.firstNumber)} / ${parseInt(this.secondNumber)} is ${parseInt(this.firstNumber)/parseInt(this.secondNumber)}`;
             //this.currentResult = parseInt(this.firstNumber)/parseInt(this.secondNumber);
         }
+        this.previousResult.push(this.currentResult);
         console.log(this.currentResult)
+    }
+
+    showPreviousResultToggle(event){
+        console.log('In the handler');
+        this.showPrevResults=event.target.checked;
+        console.log(this.showPrevResults);
     }
 
 
