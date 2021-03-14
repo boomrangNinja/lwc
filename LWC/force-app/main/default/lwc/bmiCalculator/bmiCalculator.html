@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="BMI Calculator">
+        <lightning-layout-item multiple-rows>
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-input type="number" step="0.01" label="Weight" onchange={changeHandler}></lightning-input>
+                <lightning-input type="number" step="0.01" label="Height" onchange={changeHandler}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-medium">
+                <p>
+                    BMI is {healthData.bmi}
+                </p>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-button label="Calculate" onclick={calculate}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout-item>
+    </lightning-card>
+</template>
