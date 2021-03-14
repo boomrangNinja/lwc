@@ -3,9 +3,9 @@
 
     
     <ul>
-        <template for:each={meerintRoomsInfo} for:item="room">
+        <template for:each={meetingRoomsInfo} for:item="room">
             <li key={room.roomName} style="padding: 10px">
-               
+               <c-meeting-room meeting-room-info={room}></c-meeting-room>
             </li>
         </template>
 
